@@ -10,15 +10,14 @@ namespace ClassDemoThreadsApp
         {
             for (int i = 0; i < 15; i++)
             {
+                int k = i;
+                //Thread t = new Thread(() => PrintNoget(i));
+                //t.Start();
 
-                Thread t = new Thread(() => PrintNoget(i));
-                t.Start();
-
-                //Task.Run(() =>
-                //{
-                //    int k = i;
-                //    PrintNoget(k);
-                //});
+                Task.Run(() =>
+                {
+                    PrintNoget(k);
+                });
             }
 
 
